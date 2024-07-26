@@ -68,6 +68,11 @@ nav {
     z-index: 100;
 }
 
+.nav-logo .logo-image {
+    width: 95px; /* Adjust size as necessary */
+    height: auto;
+}
+
 .nav-logo{
     position: relative;
 }
