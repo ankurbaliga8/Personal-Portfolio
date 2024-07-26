@@ -22,7 +22,7 @@ toggleSwitch.addEventListener("click", () => {
 /*-------Typing effect-------*/
 
 var typingEffect = new Typed(".typedText", {
-    strings: ["Developer", "Coder"],
+    strings: ["Developer", "Coder", "Cloud Engineer"],
     loop: true,
     typeSpeed: 100,
     backSpeed: 80,
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
+        link.addEventListener('click', function (event) {
             isClicking = true;
             removeActiveClasses();
             this.classList.add('active-link');
@@ -120,4 +120,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', scrollActive);
     scrollActive();
+});
+
+/*-------completed btn redirect to github-------*/
+document.getElementById("completed-projects").addEventListener("click", function () {
+    window.open("https://github.com/ankurbaliga8", "_blank");
+});
+
+/*-------experience btn redirect to linkedin-------*/
+document.getElementById("experience-projects").addEventListener("click", function () {
+    window.open("https://www.linkedin.com/in/ankurbaliga/", "_blank");
+});
+
+
+
+/*-------Smooth scroll-------*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    const headerHeight = document.getElementById("header").offsetHeight;
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const targetPosition = targetElement.offsetTop - headerHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 });
